@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name Crucible Fisheye Styles
-// @namespace Violentmonkey Scripts
+// @namespace Userscripts
 // @include http*://yourdomain.com/*
 // @grant none
 // ==/UserScript==
@@ -33,5 +33,15 @@ const setLineHeight = () => {
   `);
 };
 
+// Set fit to browser width when viewing image attachments.
+const setImageWidth = () => {
+  addStyleNode(`
+    a.mime-image > img {
+      width: 100%;
+    }
+  `);
+}
+
 setFontSize();
 setLineHeight();
+setImageWidth();
